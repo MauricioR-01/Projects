@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="es">
+    <head>
+        <meta charset="UTF-8">
+        <title>Suscripciones a Gym</title>
+        <link rel="stylesheet" href="style.css">
+    </head>
+    <body>
+        <h1>Suscripción a gimnasio M-RC Gym</h1>
+        <section id="suscriptionForm">
+            <form id="clientForm">
+                <section class="head">
+                    <fieldset>
+                        <legend>Periodo de suscripción</legend>
+                        <label>Suscripción inicia: </label><input id="startDate" type="date" class="period" readonly>
+                        <label>Suscripción termina: </label><input id="endDate" type="date" class="period" readonly>
+                    </fieldset>
+                </section>
+                <fieldset>
+                    <legend>Datos personales</legend>
+                    <label for="name">Nombre completo</label><input id="name" name="name" type="text" placeholder="Nombre y apellidos">
+                    <label for="email">e-mail</label><input id="email" name="email" type="email" placeholder="abc123@ejemplo.com">
+                    <label for="phone">Teléfono</label><input id="phone" name="phone" type="tel" placeholder="XX-XXX-XXXX">
+                    <label for="birthday">Fecha de nacimiento</label><input id="birthday" name="birthday" type="date">
+                    <label for="age">Edad</label><input id="age" name="age" type="number" placeholder="Edad" readonly>
+                </fieldset>
+                <fieldset>
+                    <legend>Detalles de suscripción</legend>
+                    <label for="plan">Plan</label>
+                        <select id="plan" name="plan">
+                            <option value="visit">Visita</option>
+                            <option value="weekly">Semanal</option>
+                            <option value="biweek">Quincenal</option>
+                            <option value="monthly">Mensual</option>
+                            <option value="annual">Anual</option>
+                        </select>
+                    <label for="particularInstructor">¿Paga instructor particular?</label><input id="particularInstructor" name="particularInstructor" type="checkbox">
+                    <label for="acceptedTerms">Acepto términos y condiciones</label><input id="acceptedTerms" name="acceptedTerms" type="checkbox">   
+                </fieldset>
+                <button name="submit" type="submit">Suscribirse</button>
+            </form>
+        </section>
+        <section id="suscriptions">
+            <ul id="members"></ul>
+        </section>
+        <script src="script.js"></script>
+    </body>
+</html>
