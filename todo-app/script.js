@@ -2,8 +2,18 @@ const input = document.getElementById("input");
 const boton = document.getElementById("boton");
 const lista = document.getElementById("lista");
 
-boton.addEventListener("click", () => {if (input.value.trim() == "") return;
-    const li = document.createElement("li");
-  li.textContent = input.value;
+let tasks = [];
+
+function renderTasks(){
+  lista.innerHTML = "";
+  tasks.forEach(task => {const li = document.createElement("li");
+    li.textContent = task.text;
     lista.appendChild(li);
-    input.value = "";});
+  })
+}
+
+boton.addEventListener("click", () => {const texto = input.value.trim();
+  input.value = "";
+  if (texto === "") return;
+  tasks.push({text: texto, completed: false});
+  renderTasks();});
