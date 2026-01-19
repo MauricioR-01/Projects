@@ -1,0 +1,16 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body{
+    padding: 0.5%;
+    font-family:Verdana, Arial;
+    background-color:aliceblue;
+}
+h1, input, button, ul{
+    margin: 0.5%;
+}
+ul{
+    list-style-type: none;
+}
