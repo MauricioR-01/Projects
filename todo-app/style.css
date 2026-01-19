@@ -14,3 +14,7 @@ h1, input, button, ul{
 ul{
     list-style-type: none;
 }
+.completed{
+    color:green;
+    text-decoration: line-through;
+}
