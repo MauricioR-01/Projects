@@ -13,8 +13,23 @@ h1, input, button, ul{
 }
 ul{
     list-style-type: none;
+    width: 100%;
+    min-width: 250px;
+    max-width: 25vw;
 }
-.completed{
+li{
+    display: flex;
+    justify-content: space-between;
+    cursor: pointer;
+}
+li:hover{
+    color:rebeccapurple;
+}
+li.completed span{
     color:green;
     text-decoration: line-through;
+}
+ul>p{
+    color: gray;
+    font-style: italic;
 }
