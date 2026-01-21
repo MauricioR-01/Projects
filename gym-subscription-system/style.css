@@ -1,0 +1,234 @@
+*
+{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body{
+    padding: 1%;
+    font-family:monospace;
+    background-color:#5f3a18; /*rgb(46, 46, 0)*/
+    color: #fafbf3; /*lightgoldenrodyellow*/
+}
+
+h1{
+    text-align: center;
+    font-size:60px;
+    margin-bottom: 1vw;
+    text-shadow: 0 0 10px #c48343;
+}
+
+.container{
+    display: flex;
+    gap: 2rem;
+}
+
+#subscriptionForm{
+    flex: 1;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.7);
+    background-color: rgb(52, 52, 0);
+}
+
+#subscriptions{
+    flex: 1;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.7);
+    background-color: rgb(52, 52, 0);
+}
+
+#clientForm{
+    margin-top: 1rem;
+    padding: 1rem;
+    padding-top: 0;
+}
+
+fieldset{
+    border-color: transparent;
+}
+
+#formTitle{
+    padding-left: 1%;
+    background-color: #fafbf3;
+    box-shadow: 0 0 10px #c48343;
+    color: rgb(52, 52, 0);
+    font-size: xx-large;
+}
+
+.fieldsetRow{
+    display: flex;
+}
+
+.period{
+    flex: 1;
+}
+
+#personalData{
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+
+#personalData label{
+    margin-right: 1%;
+}
+
+#subscriptionDetails{
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+
+fieldset{
+    margin-top: 3%;
+    font-size: larger;
+}
+
+legend{
+    margin-bottom: 0.5%;
+    font-size: x-large;
+}
+
+#membersh2{
+    padding-left: 1%;
+    background-color: #fafbf3;
+    box-shadow: 0 0 10px #c48343;
+    color: rgb(52, 52, 0);
+    font-size: xx-large;
+}
+
+#members{
+    margin: 0.5rem;
+    margin-top: 3%;
+    list-style-type: none;
+    background-color: aliceblue;
+    color: midnightblue;
+    font-size: medium;
+}
+
+#clientForm input:not(div.period input){
+    background-color: #fafbf3;
+    border-color: transparent;
+    box-shadow: 0 0 10px #c48343;
+    color: rgb(52, 52, 0);
+}
+
+#clientForm input:not(div.period input):not(:read-only):hover{
+    animation-duration: 1s;
+    animation-name: radial;
+    animation-fill-mode: forwards;
+}
+
+#clientForm input:focus{
+    animation-duration: 1s;
+    animation-name: radial;
+    animation-fill-mode: forwards;
+}
+
+div.period input{
+    background-color: transparent;
+    border-color: transparent;
+    font-weight: bold;
+    color: #fafbf3; /*lightgoldenrodyellow*/
+    font-size: large;
+}
+
+select{
+    background-color: #fafbf3;
+    border-color: transparent;
+    box-shadow: 0 0 10px #c48343;
+    color: rgb(52, 52, 0);
+}
+
+.check input{
+    margin-right: 1%;  
+}
+
+#submit{
+    margin-top: 3%;
+    padding: 0.5%;
+    background-color: #fafbf3;
+    border-color: transparent;
+    box-shadow: 0 0 10px #c48343;
+    color: rgb(52, 52, 0);
+    font-family: monospace;
+    font-size: larger;
+}
+
+#submit:hover{
+    background-color:#5f3a18;
+    border-color: transparent;
+    color: #fafbf3;
+    animation-duration: 1s;
+    animation-name: bigger;
+    animation-fill-mode: forwards;
+}
+
+li{
+    display:flex;
+    font-family: sans-serif;
+    outline: 1px solid midnightblue;
+}
+
+li>span{
+    flex: 7;
+    padding-left: 1%;
+    padding-top: 0.7%;
+    padding-bottom: 0.7%;
+    padding-right: 1%;
+}
+
+button.deletion{
+    flex: 1;
+    font-family:monospace;
+    background-color: midnightblue;
+    color: white;
+}
+
+button.deletion:hover{
+    background-color: darkred;
+    color: aliceblue;
+}
+
+#clientName{
+    width: 70%;
+}
+
+#email{
+    width: 50%;
+}
+
+#ladaCountry{
+    width: 20%;
+}
+
+#lada{
+    width: 7%;
+}
+
+#phone{
+    width: 30%;
+}
+
+#age{
+    width: 7%;
+}
+
+@keyframes bigger{
+    from{
+        width: auto;
+        height: auto;
+    }
+    to{
+        transform: scale(1.1);
+    }
+}
+
+@keyframes radial{
+    from{
+        border-radius: 0;
+    }
+    to{
+        border-radius: 10px;
+        transform: scale(1.02);
+    }
+}

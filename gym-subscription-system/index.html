@@ -7,16 +7,19 @@
     </head>
     <body>
         <h1>Suscripción a gimnasio M-RC Gym</h1>
-
+        <main class="container">
         <section id="subscriptionForm">
+            <h2 id="formTitle">Suscribirse</h2>
             <form id="clientForm">
                 <fieldset id="subscriptionPeriod">
                     <legend>Periodo de suscripción</legend>
-                    <div class="period">
-                        <label for="startDate">Suscripción inicia: </label><input id="startDate" name="startDate" type="date" readonly>
-                    </div>
-                    <div class="period">
-                        <label for="endDate">Suscripción termina: </label><input id="endDate" name="endDate" type="date" readonly>
+                    <div class="fieldsetRow">
+                        <div class="period">
+                            <label for="startDate">Suscripción inicia: </label><input id="startDate" name="startDate" type="date" readonly>
+                        </div>
+                        <div class="period">
+                            <label for="endDate">Suscripción termina: </label><input id="endDate" name="endDate" type="date" readonly>
+                        </div>
                     </div>
                 </fieldset>
 
@@ -58,7 +61,7 @@
                     </div>
                 </fieldset>
 
-                <fieldset id="suscriptionDetails">
+                <fieldset id="subscriptionDetails">
                     <legend>Detalles de suscripción</legend>
                     <div class="field">
                         <label for="plan">Plan</label>
@@ -71,8 +74,12 @@
                             <option value="annual">Anual</option>
                         </select>
                     </div>
-                    <label for="particularInstructor"><input id="particularInstructor" name="particularInstructor" type="checkbox">¿Paga instructor particular?</label>
-                    <label for="acceptedTerms"><input id="acceptedTerms" name="acceptedTerms" type="checkbox" required>Acepto términos y condiciones</label>
+                    <div class="check">
+                        <label for="particularInstructor"><input id="particularInstructor" name="particularInstructor" type="checkbox">¿Paga instructor particular?</label>
+                    </div>
+                    <div class="check">
+                        <label for="acceptedTerms"><input id="acceptedTerms" name="acceptedTerms" type="checkbox" required>Acepto términos y condiciones</label>
+                    </div>
                 </fieldset>
 
                 <button id="submit" type="submit">Suscribirse</button>
@@ -83,6 +90,7 @@
             <h2 id="membersh2">Miembros</h2>
             <ul id="members"></ul>
         </section>
+        </main>
         <script src="script.js"></script>
     </body>
 </html>
