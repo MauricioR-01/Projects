@@ -63,7 +63,6 @@ function renderClients(){members.innerHTML="";
         const li = document.createElement("li");
         const span = document.createElement("span");
         const eliminar = document.createElement("button");
-        eliminar.classList.add("deletion");
         li.appendChild(span);
         li.appendChild(eliminar);
 

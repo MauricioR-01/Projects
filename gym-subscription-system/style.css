@@ -3,173 +3,182 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+    outline: none;
 }
 
 body{
     padding: 1%;
-    font-family:monospace;
-    background-color:#5f3a18; /*rgb(46, 46, 0)*/
-    color: #fafbf3; /*lightgoldenrodyellow*/
+    font-family:system-ui, sans-serif;
+    background-color: #5a3e2b; /*#6b6a2e*/
+    color: #f6efe8; /*#f5f4ec*/
 }
 
 h1{
     text-align: center;
     font-size:60px;
     margin-bottom: 1vw;
-    text-shadow: 0 0 10px #c48343;
+    text-shadow: 0 0 15px #ffb84d; /*#ffd36a*/
 }
 
 .container{
     display: flex;
+    max-width: 7200px;
     gap: 2rem;
 }
 
-#subscriptionForm{
+.card{
     flex: 1;
-    box-shadow: 0 0 15px rgba(0, 0, 0, 0.7);
-    background-color: rgb(52, 52, 0);
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.25);
+    background-color: #6b4a33; /*#7d7c35 rgb(52, 52, 0)*/
+    border-radius: 12px;
 }
 
-#subscriptions{
-    flex: 1;
-    box-shadow: 0 0 15px rgba(0, 0, 0, 0.7);
-    background-color: rgb(52, 52, 0);
+.card h2{
+    padding-left: 1%;
+    padding-bottom: 0.75%;
+    padding-top: 0.75%;
+    background-color: #ffb84d; /*#2f2f1f*/
+    color: #2f2f1f; /*rgb(52, 52, 0) #f5f4ec*/
+    box-shadow: 0 0 10px #ffb84d;
+    font-size: x-large;
+    border-top-left-radius: 12px;
+    border-top-right-radius: 12px;
 }
 
 #clientForm{
-    margin-top: 1rem;
-    padding: 1rem;
-    padding-top: 0;
+    margin: 1.5rem;
 }
 
-fieldset{
+#clientForm fieldset{
     border-color: transparent;
+    margin-bottom: 2%;
 }
 
-#formTitle{
-    padding-left: 1%;
-    background-color: #fafbf3;
-    box-shadow: 0 0 10px #c48343;
-    color: rgb(52, 52, 0);
-    font-size: xx-large;
+#clientForm legend{
+    margin-bottom: 0.5%;
+    font-family: monospace;
+    font-size: x-large;
+    color: #d6c1a5;
 }
 
-.fieldsetRow{
+#clientForm .fieldsetRow{
     display: flex;
 }
 
-.period{
+#clientForm .period{
     flex: 1;
 }
 
-#personalData{
+#personalData, #subscriptionDetails{
     display: flex;
     flex-direction: column;
     gap: 0.5rem;
 }
 
-#personalData label{
-    margin-right: 1%;
-}
-
-#subscriptionDetails{
-    display: flex;
-    flex-direction: column;
-    gap: 0.5rem;
-}
-
-fieldset{
-    margin-top: 3%;
-    font-size: larger;
-}
-
-legend{
-    margin-bottom: 0.5%;
-    font-size: x-large;
-}
-
-#membersh2{
-    padding-left: 1%;
-    background-color: #fafbf3;
-    box-shadow: 0 0 10px #c48343;
-    color: rgb(52, 52, 0);
-    font-size: xx-large;
-}
-
-#members{
-    margin: 0.5rem;
-    margin-top: 3%;
-    list-style-type: none;
-    background-color: aliceblue;
-    color: midnightblue;
-    font-size: medium;
-}
-
-#clientForm input:not(div.period input){
-    background-color: #fafbf3;
+#clientForm input{
+    background-color: #f6efe8;
     border-color: transparent;
-    box-shadow: 0 0 10px #c48343;
+    border-radius: 5px;
     color: rgb(52, 52, 0);
+    transition: transform 0.4s ease, border-radius 0.4s ease, box-shadow 0.4s ease;
 }
 
-#clientForm input:not(div.period input):not(:read-only):hover{
-    animation-duration: 1s;
-    animation-name: radial;
-    animation-fill-mode: forwards;
-}
-
-#clientForm input:focus{
-    animation-duration: 1s;
-    animation-name: radial;
-    animation-fill-mode: forwards;
-}
-
-div.period input{
+#clientForm .period input{
     background-color: transparent;
     border-color: transparent;
     font-weight: bold;
-    color: #fafbf3; /*lightgoldenrodyellow*/
-    font-size: large;
-}
-
-select{
-    background-color: #fafbf3;
-    border-color: transparent;
-    box-shadow: 0 0 10px #c48343;
-    color: rgb(52, 52, 0);
-}
-
-.check input{
-    margin-right: 1%;  
-}
-
-#submit{
-    margin-top: 3%;
-    padding: 0.5%;
-    background-color: #fafbf3;
-    border-color: transparent;
-    box-shadow: 0 0 10px #c48343;
-    color: rgb(52, 52, 0);
-    font-family: monospace;
+    color: #f6efe8; /*lightgoldenrodyellow*/
     font-size: larger;
 }
 
-#submit:hover{
-    background-color:#5f3a18;
-    border-color: transparent;
-    color: #fafbf3;
-    animation-duration: 1s;
-    animation-name: bigger;
-    animation-fill-mode: forwards;
+#clientForm input:hover:not(:read-only){
+    transform: scale(1.02);
+    border-radius: 10px;
+    box-shadow: 0 0 10px #ffb84d;
 }
 
-li{
+#clientForm input:focus:not(:read-only){
+    transform: scale(1.02);
+    border-radius: 10px;
+    box-shadow: 0 0 10px #ffb84d;
+}
+
+#clientForm select{
+    background-color: #f6efe8;
+    border-color: transparent;
+    color: rgb(52, 52, 0);
+    transition: transform 0.4s ease, border-radius 0.4s ease, box-shadow 0.4s ease;
+}
+
+#clientForm select:hover{
+    transform: scale(1.02);
+    border-radius: 10px;
+    box-shadow: 0 0 10px #ffb84d;
+}
+
+#clientForm select:focus{
+    transform: scale(1.02);
+    border-radius: 10px;
+    box-shadow: 0 0 10px #ffb84d;
+}
+
+#personalData label, #subscriptionDetails label{
+    margin-right: 1.7%;
+}
+
+#clientForm .check input{
+    margin-right: 1.5%;  
+    transition: border-shadow 0.4s ease;
+}
+
+#clientForm .check input:hover{
+    box-shadow: 0 0 10px #ffb84d;
+}
+
+#clientForm .check input:focus{
+    box-shadow: 0 0 10px #ffb84d;
+}
+
+#submit{
+    margin-top: 0.5%;
+    padding: 1.2%;
+    background-color: #3a361f; /*#2f2f1f*/
+    border-color: transparent;
+    color: #f5f4ec; /*#fafbf3*/
+    font-family:Lucida Sans;
+    font-size: larger;
+    border-radius: 10px;
+    box-shadow: 0 0 7px rgb(0, 0, 0, 0.25);
+    transition: background-color 0.4s ease, color 0.4s ease, box-shadow 0.4s ease, transform 0.4s ease;
+}
+
+#submit:hover{
+    background-color: #ffd36a;
+    color: #3a361f;
+    box-shadow: 0 0 10px #ffd36a;
+}
+
+#submit:focus{
+    background-color: #ffd36a;
+    color: #3a361f;
+    box-shadow: 0 0 10px #ffd36a;
+}
+
+#members{
+    margin: 1.5rem;
+    list-style-type: none;
+    background-color: #f6efe8;
+    color: #2f2f1f;
+    font-size: medium;
+}
+
+#subscriptions li{
     display:flex;
     font-family: sans-serif;
-    outline: 1px solid midnightblue;
+    border: 1px solid #3a3a3a;/*#2f2f1f*/
 }
 
-li>span{
+#subscriptions li>span{
     flex: 7;
     padding-left: 1%;
     padding-top: 0.7%;
@@ -177,15 +186,21 @@ li>span{
     padding-right: 1%;
 }
 
-button.deletion{
+#subscriptions li>button{
     flex: 1;
-    font-family:monospace;
-    background-color: midnightblue;
-    color: white;
+    border-color: transparent;
+    background-color: #3a3a3a;
+    color: #f6efe8;
+    transition: background-color 0.25s ease, color 0.25s ease;
 }
 
-button.deletion:hover{
-    background-color: darkred;
+#subscriptions li>button:hover{
+    background-color: #ff6b6b;
+    color: aliceblue;
+}
+
+#subscriptions li>button:focus{
+    background-color: #ff6b6b;
     color: aliceblue;
 }
 
@@ -203,32 +218,15 @@ button.deletion:hover{
 
 #lada{
     width: 7%;
+    text-align: right;
 }
 
 #phone{
     width: 30%;
+    margin-left: 1%;
 }
 
 #age{
     width: 7%;
-}
-
-@keyframes bigger{
-    from{
-        width: auto;
-        height: auto;
-    }
-    to{
-        transform: scale(1.1);
-    }
-}
-
-@keyframes radial{
-    from{
-        border-radius: 0;
-    }
-    to{
-        border-radius: 10px;
-        transform: scale(1.02);
-    }
+    text-align: center;
 }
