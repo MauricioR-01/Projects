@@ -6,7 +6,7 @@ import ClientList from "./Components/ClientList"
 function App(){
   return (
     <>
-      <h1>React Gym App</h1>
+      <h1>Membresía de M-ReyC Gym</h1>
       <ClientForm/>
       <ClientList/>
     </>
