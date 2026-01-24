@@ -172,8 +172,12 @@ h1{
     font-size: medium;
 }
 
-#subscriptions li{
+#subscriptions #members>li{
     display:flex;
+    word-wrap: break-word;
+    overflow-wrap: break-word;
+    flex-wrap: wrap;
+    width: 100%;
     font-family: sans-serif;
     border: 1px solid #3a3a3a;/*#2f2f1f*/
 }
@@ -229,4 +233,39 @@ h1{
 #age{
     width: 7%;
     text-align: center;
+}
+
+@media (max-width: 600px){
+    .container, .fieldsetRow{
+        flex-direction: column;
+    }
+    h1{
+        font-size: xx-large;
+    }
+    #subscriptions #members>li{
+        width:100%;
+        flex-direction: column;
+    }
+    #subscriptions li>span{
+        font-size: 0.9rem;
+        width:100%;
+    }
+    #clientName{
+        width: 90%;
+    }
+    #email{
+        width: 90%;
+    }
+    #ladaCountry{
+        width: 50%;
+    }
+    #lada{
+        width: 30%;
+    }
+    #phone{
+        width: 70%;
+    }
+    #age{
+        width: 30%;
+    }
 }
