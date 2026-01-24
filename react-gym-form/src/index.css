@@ -1,0 +1,238 @@
+*
+{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body{
+    font-family:system-ui, sans-serif;
+    background-color: rgb(20, 20, 20);
+    background-image: url("background2.jpg");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    color: yellow;
+}
+
+.fondo{
+    position: fixed;
+    inset: 0;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background-color: rgb(47, 79, 79, 0.7);
+    z-index: 0;
+}
+
+h1{
+    position: relative;
+    text-align: center;
+    font-size: 60px;
+    margin-bottom: 1vw;
+    z-index: 1;
+}
+
+.container{
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    max-width: 7200px;
+    gap: 2rem;
+    padding: 1rem;
+    z-index: 1;
+}
+
+.card{
+    flex: 1;
+    width: 60%;
+    align-self: center;
+    padding: 1rem;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.25);
+    color: #f6efe8;
+}
+
+#subscriptionForm{
+    background-color: rgb(25, 25, 25);
+}
+
+#subscriptionForm h2{
+    margin-bottom: 1rem;
+}
+
+#subscriptions{
+    background-color: rgb(30, 51, 51);
+}
+
+.card fieldset{
+    margin-bottom: 0.5rem;
+    padding: 0.5rem;
+    border-width: medium;
+    border-color: #ffb84d;
+    box-shadow: 0 0 7px #ffb84d;
+    overflow-x: hidden;
+    min-width: 200px;
+}
+
+.card legend{
+    margin-bottom: 0.5rem;
+    font-size: large;
+}
+
+
+#clientForm .fieldsetRow{
+    display: flex;
+}
+
+#clientForm .period{
+    flex: 1;
+}
+
+#personalData, #subscriptionDetails{
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+
+#clientForm input{
+    background-color: #f6efe8;
+    border-color: transparent;
+    border-radius: 5px;
+    color: rgb(52, 52, 0);
+    transition: transform 0.4s ease, border-radius 0.4s ease, box-shadow 0.4s ease;
+}
+
+#clientForm .period input{
+    background-color: transparent;
+    border-color: transparent;
+    font-weight: bold;
+    color: #f6efe8; /*lightgoldenrodyellow*/
+    font-size: larger;
+}
+
+#clientForm input:hover:not(:read-only), #clientForm input:focus:not(:read-only){
+    transform: scale(1.1);
+    border-radius: 10px;
+    box-shadow: 0 0 10px #ffb84d;
+}
+
+#clientForm select{
+    background-color: #f6efe8;
+    border-color: transparent;
+    color: rgb(52, 52, 0);
+    transition: transform 0.4s ease, border-radius 0.4s ease, box-shadow 0.4s ease;
+}
+
+#clientForm select:hover, #clientForm select:focus{
+    transform: scale(1.1);
+    border-radius: 10px;
+    box-shadow: 0 0 10px #ffb84d;
+}
+
+#personalData input, #subscriptionDetails input{
+    margin-left: 1rem;
+}
+
+#personalData select, #subscriptionDetails select{
+    margin-left: 1rem;
+}
+
+#clientForm .check input{
+    margin-right: 1.5%;  
+    transition: border-shadow 0.4s ease;
+}
+
+#submit{
+    margin-top: 1%;
+    padding: 1.2%;
+    background-color: darkslategray; /*#2f2f1f*/
+    border-color: transparent;
+    color: #f5f4ec; /*#fafbf3*/
+    font-family:Lucida Sans;
+    font-size: larger;
+    border-radius: 10px;
+    box-shadow: 0 0 7px rgb(0, 0, 0, 0.25);
+    transition: background-color 0.4s ease, color 0.4s ease, box-shadow 0.4s ease, transform 0.4s ease;
+}
+
+#submit:hover, #submit:focus{
+    background-color: #ffd36a;
+    color: #3a361f;
+    box-shadow: 0 0 10px #ffd36a;
+}
+
+#subscriptions #clientList>ul{
+    margin: 1.5%;
+    padding: 0.7%;
+    list-style-type: none;
+    background-color: rgba(0, 0, 0, 0.25);
+    color: azure;
+    font-size: medium;
+}
+
+#subscriptions h2{
+    color: lightgray;
+}
+
+#subscriptions #clientList>ul>li{
+    display: flex;
+    flex-direction: row;
+    word-wrap: break-word;
+    overflow-wrap: break-word;
+    flex-wrap: wrap;
+    width: 100%;
+    font-family: sans-serif;
+    border: 1px solid #3a3a3a;
+}
+
+#subscriptions #clientList>ul>li>span{
+    flex: 7;
+    padding: 0.7rem;
+    width: 100%;
+}
+
+#subscriptions #clientList>ul>li>button{
+    flex: 1;
+    background-color: darkslategray;
+    color: aliceblue;
+    transition: background-color 0.25s ease, color 0.25s ease;
+}
+
+#subscriptions #clientList>ul>li>button:hover, #subscriptions #clientList>ul>li>button:focus{
+    background-color: #c74141;
+    color: aliceblue;
+}
+
+@media (max-width: 600px){
+    .card{
+        width: 95%;
+    }
+    .fieldsetRow{
+        flex-direction: column;
+    }
+    h1{
+        font-size: xx-large;
+    }
+
+    #clientForm input:hover:not(:read-only), #clientForm input:focus:not(:read-only){
+        transform: scale(1.02);
+        border-radius: 10px;
+        box-shadow: 0 0 10px #ffb84d;
+    }
+
+    #clientForm select:hover, #clientForm select:focus{
+        transform: scale(1.02);
+        border-radius: 10px;
+        box-shadow: 0 0 10px #ffb84d;
+    }
+
+    #subscriptions #clientList>ul>li{
+        width: 100%;
+        flex-direction: column;
+    }
+    #subscriptions #clientList>ul>li>span{
+        font-size: 0.9rem;
+        width:100%;
+    }
+}

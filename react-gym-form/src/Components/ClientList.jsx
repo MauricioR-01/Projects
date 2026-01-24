@@ -27,7 +27,8 @@ export default function ClientList({ clients, setClients }){
                                 {client.particularInstructor && " | Contrató instructor privado"}<br/>
                                 Edad: {client.age} años (Cumpleaños {client.birthday})
                             </span>
-                            <button type="button" onClick={() => removeClient(index)} style={{ background: "red", color: "white" }}>
+                            <button type="button" onClick={() => {const confirmed = window.confirm("¿Seguro que deseas cancelar la suscripción de este miembro?");
+                                if (confirmed) removeClient(index); }}>
                                 Cancelar suscripción
                             </button>
                         </li>

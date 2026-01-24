@@ -22,11 +22,19 @@ export default function App(){
 
   return (
     <>
+      <div class="fondo"></div>
       <h1>Membresía de M-ReyC Gym</h1>
-      <ClientForm addClient={(client) => setClients([...clients, client])} />
-      <ClientList clients={clients} setClients={setClients} removeClient={(i) => {const updated = clients.filter((_, index) => index !== i);
-        setClients(updated);
-        localStorage.setItem("clients", JSON.stringify(updated));}} />
+      <main class="container">
+        <section id="subscriptionForm" class="card">
+          <h2>Formulario de suscripción</h2>
+          <ClientForm addClient={(client) => setClients([...clients, client])} />
+        </section>
+        <section id="subscriptions" class="card"> 
+          <ClientList clients={clients} setClients={setClients} removeClient= {(i) => {const updated = clients.filter((_, index) => index !== i);
+            setClients(updated);
+            localStorage.setItem("clients", JSON.stringify(updated));}} />
+        </section>
+      </main>
     </>
   )
 }
