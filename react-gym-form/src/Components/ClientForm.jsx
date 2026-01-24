@@ -24,7 +24,7 @@ const countries = [
     {countryName: "Reino Unido", value: "+44", flag: "https://flagcdn.com/w20/gb.png"}
 ];
 
-export default function ClientForm(){
+export default function ClientForm({ addClient }){
     const today = new Date().toISOString().slice(0,10);
     const [client, setClient] = useState({
     clientName: "",
@@ -41,7 +41,19 @@ export default function ClientForm(){
     
     const handleSubmit = (e) => {
     e.preventDefault();
-    console.log(client);
+    addClient(client);
+    setClient({
+      clientName: "",
+      email: "",
+      phone: "",
+      birthday: "",
+      age: "",
+      plan: "",
+      particularInstructor: false,
+      acceptedTerms: false,
+      startDate: today,
+      endDate: today
+    });
     };
 
     const [selectedCountry, setSelectedCountry] = useState("");
@@ -161,5 +173,5 @@ export default function ClientForm(){
 
             <button id="submit" type="submit">Suscribirse</button>
         </form>
-    )
+    );
 }
