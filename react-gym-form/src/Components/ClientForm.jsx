@@ -38,10 +38,14 @@ export default function ClientForm({ addClient }){
     startDate: today,
     endDate: today
     });
+
+    const [selectedCountry, setSelectedCountry] = useState("");
     
     const handleSubmit = (e) => {
     e.preventDefault();
-    addClient(client);
+    const fullPhone = selectedCountry ? `${selectedCountry} ${client.phone}` : client.phone;
+    const newClient = { ...client, phone: fullPhone };
+    addClient(newClient);
     setClient({
       clientName: "",
       email: "",
@@ -54,9 +58,8 @@ export default function ClientForm({ addClient }){
       startDate: today,
       endDate: today
     });
+    setSelectedCountry("");
     };
-
-    const [selectedCountry, setSelectedCountry] = useState("");
     
     function dateFromInput(value){
         const [year, month, day] = value.split("-");
@@ -137,8 +140,8 @@ export default function ClientForm({ addClient }){
                         )}
                     </select>
                     <input id="phone" name="phone" type="tel" placeholder="XXX-XXX-XXXX" value={selectedCountry ? `${selectedCountry} ${client.phone}` : client.phone}
-                        onChange={(e) => {const numberOnly = e.target.value.replace(/^\+\d+\s?/, ""); 
-                            setClient({ ...client, phone: numberOnly });}}  required />
+                        onChange= {(e) => {const numberOnly = e.target.value.replace(new RegExp(`^\\${selectedCountry}\\s?`), "");
+                        setClient({ ...client, phone: numberOnly });}}  required />
                 </div>
                 <div className="field">
                     <label htmlFor="birthday">Fecha de nacimiento</label><input id="birthday" name="birthday" type="date" value={client.birthday}
