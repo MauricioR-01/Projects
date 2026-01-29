@@ -1,16 +1,46 @@
-# React + Vite
+# Gestor de membresías de gimnasio (React)
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Aplicación web desarrollada con React para gestionar membresías de un gimnasio. Permite registrar clientes, asignar planes de suscripción y administrar la lista de miembros de forma dinámica.
 
-Currently, two official plugins are available:
+## 🚀 Funcionalidades
+- Registro de clientes mediante formulario controlado
+- Cálculo automático de edad a partir de la fecha de nacimiento
+- Asignación de planes y periodos de suscripción
+- Visualización dinámica de clientes registrados
+- Eliminación de miembros
+- Persistencia de datos usando localStorage
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## 🛠️ Tecnologías
+- React
+- JavaScript (ES6+)
+- HTML5
+- CSS3
+- npm
 
-## React Compiler
+## 🧠 Conceptos aplicados
+- Manejo de estado con useState
+- Efectos secundarios con useEffect
+- Componentes reutilizables
+- Renderizado condicional
+- Manejo y validación de formularios
+- Persistencia de datos en el navegador
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+## 📦 Instalación
+npm install
+npm run dev
 
-## Expanding the ESLint configuration
+## ▶️ Uso
+1. Clonar el repositorio
+2. Instalar las dependencias:
+   npm install
+3. Iniciar el servidor de desarrollo:
+   npm run dev
+4. Abrir el proyecto en el navegador desde la URL indicada en la terminal
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+## 📚 Aprendizajes
+- Uso de React con componentes funcionales
+- Manejo de estado mediante useState
+- Manejo de efectos mediante useState (reemplazando event listeners)
+- Comunicación entre componentes por medio de props
+- Organización de lógica e interfaz en componentes reutilizables
+- Uso de npm para gestión de dependencias
