@@ -25,7 +25,7 @@ const countries = [
 ];
 
 export default function ClientForm({ addClient }){
-    const today = new Date().toISOString().slice(0,10);
+    const today = new Date().toLocaleDateString('en-CA').slice(0,10);
     const [client, setClient] = useState({
     clientName: "",
     email: "",
@@ -132,23 +132,25 @@ export default function ClientForm({ addClient }){
                 </div>
                 <div className="field">
                     <label htmlFor="phone">Teléfono</label>
-                    <select id="ladaCountry" name="lada" value={selectedCountry}
-                        onChange={(e) => setSelectedCountry(e.target.value)} required>
-                        <option value="" disabled>País</option>
-                        {countries.map((country) => (
-                            <option key={country.value} value={country.value}>{country.countryName}</option>)   // <img src={country.flag} alt={country.clientName}/>
-                        )}
-                    </select>
-                    <input id="phone" name="phone" type="tel" placeholder="XXX-XXX-XXXX" value={selectedCountry ? `${selectedCountry} ${client.phone}` : client.phone}
-                        onChange= {(e) => {const numberOnly = e.target.value.replace(new RegExp(`^\\${selectedCountry}\\s?`), "");
-                        setClient({ ...client, phone: numberOnly });}}  required />
+                    <div>
+                        <select id="ladaCountry" name="lada" value={selectedCountry}
+                            onChange={(e) => setSelectedCountry(e.target.value)} required>
+                            <option value="" disabled>País</option>
+                            {countries.map((country) => (
+                                <option key={country.value} value={country.value}>{country.countryName}</option>)   // <img src={country.flag} alt={country.clientName}/>
+                            )}
+                        </select>
+                        <input id="phone" name="phone" type="tel" placeholder="XXX-XXX-XXXX" value={selectedCountry ? `${selectedCountry} ${client.phone}` : client.phone}
+                            onChange= {(e) => {const numberOnly = e.target.value.replace(new RegExp(`^\\${selectedCountry}\\s?`), "");
+                            setClient({ ...client, phone: numberOnly });}}  required />
+                        </div>
                 </div>
                 <div className="field">
                     <label htmlFor="birthday">Fecha de nacimiento</label><input id="birthday" name="birthday" type="date" value={client.birthday}
                         onChange={(e) => setClient({ ...client, birthday: e.target.value })} required />
                 </div>
                 <div className="field">
-                    <label htmlFor="age">Edad</label><input id="age" name="age" type="number" placeholder="Edad" value={client.age} readOnly />
+                    <label htmlFor="age">Edad</label><input id="age" name="age" type="text" placeholder="Edad" inputmode="numeric" pattern="[0-9]*" value={client.age} readOnly />
                 </div>
             </fieldset>
 

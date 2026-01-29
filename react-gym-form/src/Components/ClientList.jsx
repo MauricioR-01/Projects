@@ -17,15 +17,17 @@ export default function ClientList({ clients, setClients }){
                     {clients.map((client, index) => (
                         <li key={index}>
                             <span>
-                                {client.clientName}. Contactar por Teléfono: {client.phone}, e-mail: {client.email}<br/>
-                                Suscrito del {client.startDate} al {client.endDate} (plan 
-                                {{  'visit': ' visita',
-                                    'weekly': ' semanal',
-                                    'biweek': ' quincenal',
-                                    'monthly': ' mensual',
-                                    'annual': ' anual'}[client.plan]})
-                                {client.particularInstructor && " | Contrató instructor privado"}<br/>
-                                Edad: {client.age} años (Cumpleaños {client.birthday})
+                                <span class="cName">{client.clientName}</span><br/>
+                                Suscrito del {client.startDate} al {client.endDate} ( 
+                                {{  'visit': 'visita',
+                                    'weekly': 'plan semanal',
+                                    'biweek': 'plan quincenal',
+                                    'monthly': 'plan mensual',
+                                    'annual': 'plan anual'}[client.plan]})
+                                {client.particularInstructor && " | Contrató instructor privado"}<br/><br/>
+                                {client.email}<br/>
+                                Tel: {client.phone}<br/>
+                                Edad: {client.age} años ({client.birthday})
                             </span>
                             <button type="button" onClick={() => {const confirmed = window.confirm("¿Seguro que deseas cancelar la suscripción de este miembro?");
                                 if (confirmed) removeClient(index); }}>

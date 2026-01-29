@@ -23,7 +23,7 @@ export default function App(){
   return (
     <>
       <div class="fondo"></div>
-      <h1>Membresía de M-ReyC Gym</h1>
+      <h1><span>Unirse a </span>M-ReyC Gym</h1>
       <main class="container">
         <section id="subscriptionForm" class="card">
           <h2>Formulario de suscripción</h2>
